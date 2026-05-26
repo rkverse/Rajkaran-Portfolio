@@ -354,78 +354,179 @@
 
     <main class="mb-12 md:mb-0 md:mt-12">
       <!-- ===== HOME ===== -->
+      <!-- ===== HOME ===== -->
       <section
         id="home"
-        class="min-h-screen flex items-center section-fade px-4"
+        class="min-h-screen flex items-center section-fade px-4 relative overflow-hidden"
       >
-        <div class="max-w-5xl mx-auto w-full py-20 md:py-28">
-          <!-- Gold accent line -->
-          <div class="flex items-center gap-3 mb-8">
-            <div class="w-8 h-px bg-gold"></div>
-            <span
-              class="text-gold text-sm font-medium tracking-widest uppercase"
-              >Portfolio</span
-            >
-          </div>
+        <!-- Background decorative elements -->
+        <div
+          class="absolute top-20 right-0 w-96 h-96 rounded-full bg-gold/5 blur-3xl pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-20 left-0 w-64 h-64 rounded-full bg-gold/3 blur-2xl pointer-events-none"
+        ></div>
 
-          <h1
-            class="font-display font-extrabold text-5xl md:text-7xl leading-tight mb-4"
+        <!-- Vertical label -->
+        <div
+          class="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col items-center gap-3"
+        >
+          <div class="w-px h-16 bg-dark-border"></div>
+          <span
+            class="text-ivory/20 text-[10px] tracking-[0.3em] uppercase rotate-90 whitespace-nowrap"
+            >Full Stack Developer</span
           >
-            Hello, I'm<br />
-            <span class="gold-text">Raj Karan</span>
-          </h1>
-          <h3 class="text-ivory/60 text-xl md:text-2xl font-light mb-6">
-            Full Stack Developer &amp; UI/UX Designer
-          </h3>
-          <p class="text-ivory/70 max-w-xl leading-relaxed mb-10">
-            Passionate about building user-centered applications with React,
-            React Native &amp; Django. Founder of
-            <span class="text-gold">Cookie</span> — a software company
-            delivering web solutions, digital marketing &amp; graphic design.
-          </p>
+          <div class="w-px h-16 bg-dark-border"></div>
+        </div>
 
-          <div class="flex flex-wrap gap-4 mb-14">
-            <a
-              href="#contact"
-              class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-dark font-semibold px-6 py-3 rounded-lg transition-colors"
+        <div class="max-w-5xl mx-auto w-full py-24 md:py-32">
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <!-- LEFT — Photo -->
+            <div
+              class="order-2 md:order-1 flex justify-center md:justify-start"
             >
-              Contact Me <i class="uil uil-message text-lg"></i>
-            </a>
-            <a
-              href="#portfolio"
-              class="inline-flex items-center gap-2 border border-gold text-gold hover:bg-gold hover:text-dark font-semibold px-6 py-3 rounded-lg transition-all"
-            >
-              View Work <i class="uil uil-arrow-right text-lg"></i>
-            </a>
+              <div class="relative">
+                <!-- Outer glow ring -->
+                <div
+                  class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-gold/30 via-transparent to-gold/10 blur-sm"
+                ></div>
+
+                <!-- Main image frame -->
+                <div
+                  class="relative w-64 h-72 md:w-72 md:h-80 lg:w-80 lg:h-96 rounded-3xl overflow-hidden border border-gold/30"
+                >
+                  <img
+                    src="assets/img/Aboutme.jpg"
+                    alt="Raj Karan"
+                    class="w-full h-full object-cover object-top"
+                  />
+                  <!-- Bottom gradient overlay -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"
+                  ></div>
+                </div>
+
+                <!-- Floating badge — experience -->
+                <div
+                  class="absolute -bottom-4 -right-4 bg-dark-card border border-dark-border rounded-2xl px-4 py-3 shadow-xl"
+                >
+                  <p
+                    class="font-display font-bold text-gold text-2xl leading-none"
+                  >
+                    10+
+                  </p>
+                  <p class="text-ivory/50 text-[11px] mt-0.5">Projects done</p>
+                </div>
+
+                <!-- Floating badge — availability -->
+                <div
+                  class="absolute -top-4 -left-4 bg-dark-card border border-dark-border rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-2"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                  ></span>
+                  <p class="text-ivory/70 text-[11px] font-medium">
+                    Open to work
+                  </p>
+                </div>
+
+                <!-- Decorative corner square -->
+                <div
+                  class="absolute -bottom-6 -left-6 w-12 h-12 border border-gold/20 rounded-lg opacity-60"
+                ></div>
+              </div>
+            </div>
+
+            <!-- RIGHT — Content -->
+            <div class="order-1 md:order-2">
+              <!-- Tag line -->
+              <div class="flex items-center gap-3 mb-7">
+                <div class="w-8 h-px bg-gold"></div>
+                <span
+                  class="text-gold text-xs font-semibold tracking-[0.22em] uppercase"
+                  >Portfolio</span
+                >
+              </div>
+
+              <h1
+                class="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-4"
+              >
+                Hello, I'm<br />
+                <span class="gold-text">Raj Karan</span>
+              </h1>
+
+              <h3
+                class="text-ivory/50 text-base md:text-lg font-light mb-5 tracking-wide"
+              >
+                Full Stack Developer &amp; UI/UX Designer
+              </h3>
+
+              <p class="text-ivory/65 text-sm leading-[1.85] mb-8 max-w-md">
+                Passionate about building user-centered applications with React,
+                React Native &amp; Django. Founder of
+                <span class="text-gold font-medium">Cookie</span> — a software
+                company delivering web solutions, digital marketing &amp;
+                graphic design.
+              </p>
+
+              <!-- CTA buttons -->
+              <div class="flex flex-wrap gap-3 mb-10">
+                <a
+                  href="#contact"
+                  class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-dark font-semibold text-sm px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-gold/20"
+                >
+                  Contact Me <i class="uil uil-message text-base"></i>
+                </a>
+                <a
+                  href="#portfolio"
+                  class="inline-flex items-center gap-2 border border-gold/50 text-gold hover:bg-gold hover:text-dark hover:border-gold font-semibold text-sm px-6 py-3 rounded-xl transition-all"
+                >
+                  View Work <i class="uil uil-arrow-right text-base"></i>
+                </a>
+                <a
+                  href="assets/pdf/Rajkaran-Resume.pdf"
+                  download
+                  class="inline-flex items-center gap-2 border border-dark-border text-ivory/50 hover:border-ivory/40 hover:text-ivory font-semibold text-sm px-5 py-3 rounded-xl transition-all"
+                >
+                  Resume <i class="uil uil-download-alt text-base"></i>
+                </a>
+              </div>
+
+              <!-- Social links -->
+              <div class="flex items-center gap-3">
+                <span
+                  class="text-ivory/25 text-xs tracking-widest uppercase mr-1"
+                  >Find me</span
+                >
+                <a
+                  href="https://www.linkedin.com/in/rajkaran7/"
+                  target="_blank"
+                  class="w-9 h-9 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark hover:border-gold transition-all"
+                >
+                  <i class="uil uil-linkedin-alt text-lg"></i>
+                </a>
+                <a
+                  href="https://github.com/rkgit-1530"
+                  target="_blank"
+                  class="w-9 h-9 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark hover:border-gold transition-all"
+                >
+                  <i class="uil uil-github-alt text-lg"></i>
+                </a>
+              </div>
+
+              <!-- Scroll cue -->
+              <a
+                href="#about"
+                class="inline-flex items-center gap-2 text-ivory/30 hover:text-gold text-xs mt-12 transition-all hover:gap-3"
+              >
+                <i class="uil uil-mouse-alt text-xl"></i>
+                <span class="font-medium tracking-wider uppercase"
+                  >Scroll down</span
+                >
+                <i class="uil uil-arrow-down text-sm"></i>
+              </a>
+            </div>
           </div>
-
-          <!-- Social links -->
-          <div class="flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/rajkaran7/"
-              target="_blank"
-              class="w-10 h-10 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all"
-            >
-              <i class="uil uil-linkedin-alt text-xl"></i>
-            </a>
-            <a
-              href="https://github.com/rkgit-1530"
-              target="_blank"
-              class="w-10 h-10 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all"
-            >
-              <i class="uil uil-github-alt text-xl"></i>
-            </a>
-          </div>
-
-          <!-- Scroll cue -->
-          <a
-            href="#about"
-            class="flex items-center gap-2 text-gold text-sm mt-16 hover:gap-4 transition-all"
-          >
-            <i class="uil uil-mouse-alt text-2xl"></i>
-            <span class="font-medium">Scroll down</span>
-            <i class="uil uil-arrow-down"></i>
-          </a>
         </div>
       </section>
 
@@ -1617,8 +1718,6 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js">
-     
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
