@@ -1,826 +1,1624 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Raj Karan - Full Stack Developer & Founder at Cookie"
+    />
+    <title>Raj Karan — Developer</title>
+    <meta
+      name="keywords"
+      content="Raj karan, Cookie, Founder, Software Developer, UI UX Designer"
+    />
+    <meta name="author" content="Raj karan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="assets/img/Portfolio Logo.png" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Raj karan -Sofwate Developer and Founder at Cookie. Explore my expertise in Software development and Cookie.">
-    <!--==================== UNICONS ====================-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="assets/img/Portfolio Logo.png">
-    <title>Raj Karan - Developer</title>
-    <meta name="keywords" content="Raj karan, Cookie, Founder , Software Developer , UI UX Designer">
-    <meta name="author" content="Raj karan">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="sqymcSowlUe8zYvSdLgK_3EDc8aId59g3ktudDIsEas" />
-    
-</head>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-<body style="background-color:#212121;">
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header" style="background-color: #212121;">
-        <nav class="nav container" >
-            <a href="#" class="nav__logo">Raj Karan</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="uil uil-estate nav__icon"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> About
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="uil uil-file-alt nav__icon"></i> Skills
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#qualifications" class="nav__link">
-                            <i class="uil uil-graduation-cap nav__icon"></i> Qualifications
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#expertise" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon"></i> Expertise
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i> Portfolio
-                        </a>
-                    </li>
-                    
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="uil uil-estate nav__icon"></i> Contact Me
-                        </a>
-                    </li>
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
-            </div>
-            
-            <div class="nav__btns">
-                <!--Theme change button-->
-              
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
+    <!-- Unicons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
 
-        </nav>
+    <!-- Swiper -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                light: "#e7c88f",
+                DEFAULT: "#c18b13",
+                dark: "#a57811",
+              },
+              dark: {
+                DEFAULT: "#212121",
+                card: "#2a2a2a",
+                border: "#333333",
+              },
+              ivory: "#fffff0",
+            },
+            fontFamily: {
+              display: ["Syne", "sans-serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: #212121;
+        color: #fffff0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Syne", sans-serif;
+      }
+
+      /* Skill bars */
+      .skill-bar {
+        height: 5px;
+        background: #3a3a3a;
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+      .skill-fill {
+        height: 100%;
+        background: #c18b13;
+        border-radius: 9999px;
+      }
+
+      /* Nav mobile */
+      #nav-menu {
+        transition: bottom 0.3s ease;
+      }
+      #nav-menu.show-menu {
+        bottom: 0 !important;
+      }
+
+      /* Active nav link */
+      .active-link {
+        color: #c18b13 !important;
+      }
+
+      /* Qualification tabs */
+      .qual-content {
+        display: none;
+      }
+      .qual-content.qual-active {
+        display: block;
+      }
+      .qual-btn.qual-active {
+        color: #c18b13;
+        border-bottom: 2px solid #c18b13;
+      }
+
+      /* Modal */
+      .expertise-modal {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+      }
+      .expertise-modal.active-modal {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Scroll up */
+      #scroll-up {
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+      #scroll-up.show-scroll {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: 5rem;
+      }
+
+      /* Section fade-in */
+      .section-fade {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .section-fade.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Skills accordion */
+      .skills-list {
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .skills-open .skills-list {
+        max-height: 600px;
+      }
+      .skills-close .skills-list {
+        max-height: 0;
+      }
+      .skills-open .skills-arrow {
+        transform: rotate(180deg);
+      }
+      .skills-arrow {
+        transition: transform 0.4s;
+      }
+
+      /* Gold gradient text */
+      .gold-text {
+        background: linear-gradient(135deg, #e7c88f, #c18b13);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Swiper */
+      .swiper-pagination-bullet-active {
+        background: #c18b13 !important;
+      }
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        content: "";
+      }
+
+      @media (min-width: 768px) {
+        #header {
+          top: 0;
+          bottom: auto;
+        }
+        body {
+          margin: 0;
+        }
+      }
+      @media (max-width: 767px) {
+        #nav-menu {
+          position: fixed;
+          bottom: -100%;
+          left: 0;
+          width: 100%;
+          background: #212121;
+          padding: 2rem 1.5rem 4rem;
+          box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.3);
+          border-radius: 1.5rem 1.5rem 0 0;
+          z-index: 200;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark text-ivory">
+    <!-- ===== HEADER ===== -->
+    <header
+      id="header"
+      class="fixed bottom-0 left-0 w-full bg-dark z-50 md:top-0 md:bottom-auto border-t border-dark-border md:border-t-0 md:border-b md:border-dark-border"
+    >
+      <nav
+        class="max-w-5xl mx-auto px-4 h-12 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="font-display font-bold text-lg text-ivory hover:text-gold transition-colors"
+          >Raj Karan</a
+        >
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex gap-6 text-sm font-medium">
+          <li>
+            <a
+              href="#home"
+              class="nav__link hover:text-gold transition-colors active-link"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="nav__link hover:text-gold transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="nav__link hover:text-gold transition-colors"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#qualifications"
+              class="nav__link hover:text-gold transition-colors"
+              >Qualifications</a
+            >
+          </li>
+          <li>
+            <a
+              href="#expertise"
+              class="nav__link hover:text-gold transition-colors"
+              >Expertise</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="nav__link hover:text-gold transition-colors"
+              >Work</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav__link hover:text-gold transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile toggle -->
+        <div
+          id="nav-toggle"
+          class="md:hidden text-ivory text-xl cursor-pointer"
+        >
+          <i class="uil uil-apps"></i>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="nav-menu" class="md:hidden">
+        <ul class="grid grid-cols-3 gap-6 text-center">
+          <li>
+            <a
+              href="#home"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-estate text-xl"></i>Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-user text-xl"></i>About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-file-alt text-xl"></i>Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#qualifications"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-graduation-cap text-xl"></i>Quals</a
+            >
+          </li>
+          <li>
+            <a
+              href="#expertise"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-briefcase-alt text-xl"></i>Expertise</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-scenery text-xl"></i>Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav__link flex flex-col items-center gap-1 text-xs font-medium text-ivory hover:text-gold transition-colors"
+              ><i class="uil uil-envelope text-xl"></i>Contact</a
+            >
+          </li>
+        </ul>
+        <i
+          class="uil uil-times absolute right-5 bottom-4 text-2xl text-gold cursor-pointer"
+          id="nav-close"
+        ></i>
+      </div>
     </header>
 
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/in/rajkaran7/" target="_blank" class="home__social-icon">
-                            <i class="uil uil-linkedin-alt"></i>
-                        </a>
-                        
-                        <a href="https://github.com/rkgit-1530" target="_blank" class="home__social-icon">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-                        
-                    </div>
-
-                    <div class="home__data">
-                        <h1 class="home__title">Hello from Raj Karan,</h1>
-                        <h3 class="home__subtitle">Full Stack Developer | Designer </h3>
-                        <p class="home__description">I’m a dedicated Full Stack developer and UI/UX designer passionate about creating user-centered, efficient applications using React, React Native , Django. I also run Cookie, a Software company providing Software solutions , Digital Marketing and Graphic Designing</p>
-                        <a href="#contact" class="button button--flex">
-                            Contact Me <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="home_scroll">
-                    <a href="#about" class="home__scroll-button button--flex">
-                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Scroll down</span>
-                        <i class="uil uil-arrow-down homw__scroll-arrow"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title"> About Me</h2>
-            <span class="section__subtitle">My introduction</span>
-
-            <div class="about__container container grid">
-                <img src="assets/img/Aboutme.jpg" alt="" class="about__img" height="300px">
-
-                <div class="about__data">
-                    <p class="about__description">
-                        I’m a dedicated Full Stack developer and UI/UX designer passionate about creating user-centered, efficient applications using React, React Native , Django. I also run Cookie, a Software company providing Software solutions , Digital Marketing and Graphic Designing
-                    </p>
-
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">Fresher</span>
-                            <span class="about__info-name">Experience </span>
-                        </div>
-
-                        <div>
-                            <span class="about__info-title">10+</span>
-                            <span class="about__info-name">Completed <br> projects </span>
-                        </div>
-                    </div>
-                    <div class="about__buttons">
-                        <a download href="assets\pdf\Rajkaran-Resume.pdf" class="button button--flex">
-                            Download CV <i class="uil uil-download-alt button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!--==================== SKILLS ====================-->
-        <section class="skills section" id="skills">
-            <h2 class="section__title">Skills</h2>
-            <span class="section__subtitle">My technical level</span>
-
-            <div class="skills__container container grid">
-                <div>
-                    <!--====================== SKILLS 1 =============================-->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-code-branch skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Programming Languages</h1>
-                                <span class="skills__subtitle">Several years of experience</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Python</h3>
-                                    <div class="skills__number">95%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__python"></div>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">C Programming</h3>
-                                    <div class="skills__number">60%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__java"></div>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Java Programming</h3>
-                                    <div class="skills__number">60%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__java"></div>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">HTML</h3>
-                                    <div class="skills__number">90%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__r"></div>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">CSS</h3>
-                                    <div class="skills__number">65%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__c"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--====================== SKILLS 2 =============================-->
-                <div class="skills__content skills__open">
-                    <div class="skills__header">
-                        <i class="uil uil-atom skills__icon"></i>
-
-                        <div>
-                            <h1 class="skills__title">Technologies</h1>
-                            <span class="skills__subtitle">Several years of experience</span>
-                        </div>
-
-                        <i class="uil uil-angle-down skills__arrow"></i>
-                    </div>
-
-                    <div class="skills__list grid">
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Bootstrap</h3>
-                                <div class="skills__number">85%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__docker"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Render</h3>
-                                <div class="skills__number">60%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__kubernetes"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Git</h3>
-                                <div class="skills__number">90%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__git"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">React JS</h3>
-                                <div class="skills__number">80%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__reactnative"></div>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Figma</h3>
-                                <div class="skills__number">80%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__reactnative"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Django</h3>
-                                <div class="skills__number">85%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__bash"></div>
-                            </div>
-                        </div>
-
-                        <div class="skills__data">
-                            <div class="skills__titles">
-                                <h3 class="skills__name">Tailwind</h3>
-                                <div class="skills__number">80%</div>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__percentage skills__bootstrap"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!--====================== SKILLS 3 =============================-->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-database skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Database Systems</h1>
-                                <span class="skills__subtitle">Several years of experience</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">MySQL</h3>
-                                    <div class="skills__number">70%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__mysql"></div>
-                                </div>
-                            </div>
-
-                            
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">MongoDB</h3>
-                                    <div class="skills__number">70%</div>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage skills__mongo"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== QUALIFICATION ====================-->
-        <section class="qualification section" id="qualifications">
-            <h2 class="section__title">Qualifications</h2>
-            <div class="section__subtitle">My personal journey</div>
-
-            <div class="qualification__container container">
-                <div class="qualification__tabs">
-                    <div class="qualification__button button--flex qualification__active" data-target="#education">
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Education
-                    </div>
-
-                    <div class="qualification__button button--flex" data-target="#work">
-                        <i class="uil uil-briefcase-alt qualification__icon"></i>
-                        Work
-                    </div>
-                </div>
-
-                <div class="qualification__sections">
-                    <!--===============================QUALIFICATION CONTENT 1 ===========================-->
-                    <div class="qualification__content qualification__active" data-content id="education">
-                        <!--===============================QUALIFICATION 1 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">Bachelors in Computer Applications</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://gurunanakcollege.edu.in/" target="_blank" style="color:white">Guru Nanak College</a>
-                                        <br>
-                                        <h5>7.5 CGPA</h5>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2022 - 2025
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-
-                        <!--===============================QUALIFICATION 2 ===========================-->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                            </div>
-
-                            <div>
-                                <h3 class="qualification__title">Msc Applied Data Science</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.srmist.edu.in/" target="_blank" style="color:white">SRM IST</a>
-                                        <br>
-                                        <h5>72%</h5>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2025 - 2027
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--===============================QUALIFICATION CONTENT 2 ===========================-->
-                    <div class="qualification__content" data-content id="work">
-                        <!--===============================QUALIFICATION 1 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">MERN Stack Intern</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.altruisty.in" style="color:white" target="_blank">Altruisty</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    November 2024 - January 2025
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-
-                        <!--===============================QUALIFICATION 2 ===========================-->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div>
-                                <h3 class="qualification__title">Web Developer Intern</h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.prodigyinfotech.dev/" target="_blank" style="color:white">Prodigy Infotech</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    October 2024 - November 2024
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--===============================QUALIFICATION 3 ===========================-->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">Full-Stack Developer | Founder </h3>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.cookie.org.in/" target="_blank" style="color:white">Cookie</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    January 2025 - Present 
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== Expertise ====================-->
-        <section class="expertise section" id="expertise">
-            <h2 class="section__title">Expertise</h2>
-            <span class="section__subtitle">Areas of Interest</span>
-
-            <div class="Expertise__container container grid">
-                <!--===================== Expertise 1 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-chart-line Expertise__icon"></i>
-                        <h3 class="Expertise__title">Web Development</h3>
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h3 class="Expertise__modal-title">Web Development</h3>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-                                
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p><b>Tech Used : Node.js, Mongo DB, React.js</b></p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Used For  Dynamic and fast Webpages</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Highly Skilled in JavaScript Problem Solving</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 2 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-brain Expertise__icon"></i>
-                        <h3 class="Expertise__title">Graphic Designer</h3>
-
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h4 class="Expertise__modal-title">Graphic Designer</h4>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>expertise in creating visually appealing and user-friendly interfaces. Proficient in tools like Figma, Adobe XD, Canva</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p> My work focuses on combining creativity with functionality to craft engaging and accessible user experiences.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--===================== Expertise 3 ====================-->
-                <div class="Expertise__content">
-                    <div>
-                        <i class="uil uil-robot Expertise__icon"></i>
-                        <h3 class="Expertise__title">Django Developer</h3>
-
-                        <span class="button button--flex button--small button--link Expertise__button">
-                            View More
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </span>
-
-                        <div class="Expertise__modal">
-                            <div class="Expertise__modal-content">
-                                <h4 class="Expertise__modal-title">Django developer</h4>
-                                <i class="uil uil-times Expertise__modal-close"></i>
-
-                                <ul class="Expertise__modal-expertise grid">
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>I develop efficient and robust Python applications, optimized for performance
-                                            and scalability.</p>
-                                    </li>
-
-                                    <li class="Expertise__modal-service">
-                                        <i class="uil uil-check-circle Expertise__modal-icon"></i>
-                                        <p>Developed a YouTube Video Downloader in Django with a seamless, user-friendly interface and Designed a clean, responsive UI to enhance user experience and simplify downloading videos.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-            </div>
-        </section>
-
-        <!--==================== PORTFOLIO ====================-->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <span class="section__subtitle">Most Recent Work</span>
-
-            <div class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-
-                    <!--======================== PORTFOLIO 1 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/IQ-Bridge.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">IQ-Bridge</h3>
-                            <p class="portfolio__description">
-                                Developed a landing page for a Edutech Based Client From united Arab Emirates Who Provides Online Courses and Training for Students and Professionals.
-                            </p>
-                            <a href="https://iqbridge.org" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/arul.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Designer Portfolio</h3>
-                            <p class="portfolio__description">
-                               A Designer Portfolio Website Developed For a Client Who is a UI UX Designer. It Contains All the Details of the Client and His Works.
-                            </p>
-                            <a href="https://arulraj.cookie.org.in"
-                                class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 2 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/TT.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Mini Commerce</h3>
-                            <p class="portfolio__description">
-                                Developed a Mini Commerce Application For a Client Using React. It Allows Users to Browse and Purchase Products Online.
-                            </p>
-                            <a href="https://www.torquetoyzz.com/" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-
-                    <!--======================== PORTFOLIO 3 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/Code Editor.jpg" alt="Featurewiz Logo" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Code Editor</h3>
-                            <p class="portfolio__description">
-                                developed code Editor Using Html,Css,Javascript. Users Can Write Html,Css and Javascript Code And See the Live Output on the other side of the window 
-                            </p>
-                            <a href="https://rkgit-1530.github.io/frontend-Editor-live/" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 4 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/lodge.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Business Website </h3>
-                            <p class="portfolio__description">
-                                Developed a Business Website For a Client Who is a Lodge Founder. It Contains All the Details of the Client and His Works.
-                            </p>
-                            <a href="https://www.sribrahmavidhyalodge.site/" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--======================== PORTFOLIO 5 =============-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/Tictactoe.png" alt="" class="portfolio__img" loading="lazy">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Tic Tac Toe Game</h3>
-                            <p class="portfolio__description">
-                                Developed a Tic Tac Toe Game With Beautiful UI and Great User experience.
-                            </p>
-                            <a href="https://rkgit-1530.github.io/TIC-TAC-TOE/" class="button button--flex button--small portfolio__button">
-                                View
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            
-                <!--============ Add Pagination =============-->
-                <div class="swiper-pagination swiper-pagination-portfolio"></div>
-            </div>
-        </section>
-
-        
-
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contact Me</h2>
-            <span class="section__subtitle">Get in touch</span>
-
-            <div class="contact__container container grid">
-                <div>
-                    <div class="contact__information">
-                        <i class="uil uil-whatsapp-alt contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Whatsapp</h3>
-                            <span class="contact__subtitle">+91 9962313298</span>
-                        </div>
-                    </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">rajkaranpremkumar@gmail.com</span>
-                        </div>
-                    </div>
-
-                    <div class="contact__information">
-                        <i class="uil uil-map-marker contact__icon"></i>
-
-                        <div>
-                            <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">Chennai, Tamil Nadu</span>
-                        </div>
-                    </div>
-                        
-                    <form action="mailto:rajkaranprem@gmail.com" method="POST" class="contact__form grid" id="submit_form">
-                        <div class="contact__inputs grid">
-                            <div class="contact__content">
-                                <label for="name" class="contact__label">Name</label>
-                                <input type="text" id="name" name="name" class="contact__input" required>
-                            </div>
-
-                            <div class="contact__content">
-                                <label for="email" class="contact__label" placeholder="email@example.com">Email</label>
-                                <input type="email" id="email" name="email" class="contact__input" required>
-                            </div>
-                        </div>
-
-                        <div class="contact__content">
-                            <label for="project-contact" class="contact__label">Subject</label>
-                            <input type="text" id="project-contact" name="project" class="contact__input" required>
-                        </div>
-
-                        <div class="contact__content">
-                            <label for="message-contact" class="contact__label">Message</label>
-                            <textarea name="message" cols="0" rows="7" id="message-contact"
-                                class="contact__input" required></textarea>
-                        </div>
-
-
-                        <div style="text-align: center;">
-                            <button class="button button--flex" id="check">
-                                Send Message
-                                <i class="uil uil-message button__icon"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <!--==================== FOOTER ====================-->
-    <footer class="footer" id="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <h2 class="footer__title">Raj Karan</h2>
-                    <span class="footer__subtitle">Full Stack Web Developer | UI UX Designer</span>
-                </div>
-
-                <ul class="footer__links" style="align-self: center;">
-                    <li>
-                        <a href="#expertise" class="footer__link">Expertise</a>
-                    </li>
-
-                    <li>
-                        <a href="#portfolio" class="footer__link">Portfolio</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="footer__link">Contact Me</a>
-                    </li>
-                </ul>
-
-                
-
-            <p class="footer__copy" style="margin-top: 10px; color: #212121;">&#169; Raj Karan. All rights reserved.</p>
+    <main class="mb-12 md:mb-0 md:mt-12">
+      <!-- ===== HOME ===== -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center section-fade px-4"
+      >
+        <div class="max-w-5xl mx-auto w-full py-20 md:py-28">
+          <!-- Gold accent line -->
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-8 h-px bg-gold"></div>
+            <span
+              class="text-gold text-sm font-medium tracking-widest uppercase"
+              >Portfolio</span
+            >
+          </div>
+
+          <h1
+            class="font-display font-extrabold text-5xl md:text-7xl leading-tight mb-4"
+          >
+            Hello, I'm<br />
+            <span class="gold-text">Raj Karan</span>
+          </h1>
+          <h3 class="text-ivory/60 text-xl md:text-2xl font-light mb-6">
+            Full Stack Developer &amp; UI/UX Designer
+          </h3>
+          <p class="text-ivory/70 max-w-xl leading-relaxed mb-10">
+            Passionate about building user-centered applications with React,
+            React Native &amp; Django. Founder of
+            <span class="text-gold">Cookie</span> — a software company
+            delivering web solutions, digital marketing &amp; graphic design.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mb-14">
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-dark font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              Contact Me <i class="uil uil-message text-lg"></i>
+            </a>
+            <a
+              href="#portfolio"
+              class="inline-flex items-center gap-2 border border-gold text-gold hover:bg-gold hover:text-dark font-semibold px-6 py-3 rounded-lg transition-all"
+            >
+              View Work <i class="uil uil-arrow-right text-lg"></i>
+            </a>
+          </div>
+
+          <!-- Social links -->
+          <div class="flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/rajkaran7/"
+              target="_blank"
+              class="w-10 h-10 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all"
+            >
+              <i class="uil uil-linkedin-alt text-xl"></i>
+            </a>
+            <a
+              href="https://github.com/rkgit-1530"
+              target="_blank"
+              class="w-10 h-10 border border-dark-border rounded-lg flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all"
+            >
+              <i class="uil uil-github-alt text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Scroll cue -->
+          <a
+            href="#about"
+            class="flex items-center gap-2 text-gold text-sm mt-16 hover:gap-4 transition-all"
+          >
+            <i class="uil uil-mouse-alt text-2xl"></i>
+            <span class="font-medium">Scroll down</span>
+            <i class="uil uil-arrow-down"></i>
+          </a>
         </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section id="about" class="py-20 px-4 section-fade">
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-gold text-sm font-medium tracking-widest uppercase mb-2"
+          >
+            Get to know me
+          </p>
+          <h2 class="font-display font-bold text-4xl md:text-5xl mb-14">
+            About Me
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Image -->
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-gold mx-auto md:mx-0"
+              >
+                <img
+                  src="assets/img/Aboutme.jpg"
+                  alt="Raj Karan"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-gold rounded-2xl opacity-30 hidden md:block"
+              ></div>
+            </div>
+
+            <!-- Info -->
+            <div>
+              <p class="text-ivory/70 leading-relaxed mb-8">
+                I'm a dedicated Full Stack developer and UI/UX designer
+                passionate about creating user-centered, efficient applications
+                using React, React Native &amp; Django. I also run
+                <span class="text-gold font-semibold">Cookie</span>, a software
+                company providing software solutions, digital marketing and
+                graphic designing.
+              </p>
+
+              <div class="flex gap-8 mb-8">
+                <div class="text-center">
+                  <p class="font-display font-bold text-3xl text-gold">Fresh</p>
+                  <p class="text-ivory/50 text-sm mt-1">Graduate</p>
+                </div>
+                <div class="w-px bg-dark-border"></div>
+                <div class="text-center">
+                  <p class="font-display font-bold text-3xl text-gold">10+</p>
+                  <p class="text-ivory/50 text-sm mt-1">Projects done</p>
+                </div>
+                <div class="w-px bg-dark-border"></div>
+                <div class="text-center">
+                  <p class="font-display font-bold text-3xl text-gold">3+</p>
+                  <p class="text-ivory/50 text-sm mt-1">Clients served</p>
+                </div>
+              </div>
+
+              <a
+                href="assets/pdf/Rajkaran-Resume.pdf"
+                download
+                class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-dark font-semibold px-6 py-3 rounded-lg transition-colors"
+              >
+                Download CV <i class="uil uil-download-alt text-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section id="skills" class="py-20 px-4 section-fade">
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-gold text-sm font-medium tracking-widest uppercase mb-2"
+          >
+            What I know
+          </p>
+          <h2 class="font-display font-bold text-4xl md:text-5xl mb-14">
+            Skills
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Programming Languages -->
+            <div
+              class="skills-open bg-dark-card border border-dark-border rounded-2xl p-6"
+            >
+              <div
+                class="skills__header flex items-center gap-3 mb-6 cursor-pointer select-none"
+              >
+                <i class="uil uil-code-branch text-gold text-2xl"></i>
+                <div class="flex-1">
+                  <h3 class="font-display font-semibold text-base">
+                    Languages
+                  </h3>
+                  <p class="text-ivory/40 text-xs">Programming</p>
+                </div>
+                <i
+                  class="uil uil-angle-down skills-arrow text-gold text-xl"
+                ></i>
+              </div>
+              <div class="skills-list space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Python</span><span class="text-gold">95%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>HTML</span><span class="text-gold">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>CSS</span><span class="text-gold">65%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 65%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>C Programming</span><span class="text-gold">60%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Java</span><span class="text-gold">60%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div
+              class="skills-open bg-dark-card border border-dark-border rounded-2xl p-6"
+            >
+              <div
+                class="skills__header flex items-center gap-3 mb-6 cursor-pointer select-none"
+              >
+                <i class="uil uil-atom text-gold text-2xl"></i>
+                <div class="flex-1">
+                  <h3 class="font-display font-semibold text-base">
+                    Technologies
+                  </h3>
+                  <p class="text-ivory/40 text-xs">Frameworks & Tools</p>
+                </div>
+                <i
+                  class="uil uil-angle-down skills-arrow text-gold text-xl"
+                ></i>
+              </div>
+              <div class="skills-list space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Git</span><span class="text-gold">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Django</span><span class="text-gold">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Bootstrap</span><span class="text-gold">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>React JS</span><span class="text-gold">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Figma</span><span class="text-gold">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Tailwind</span><span class="text-gold">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>Render</span><span class="text-gold">60%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div
+              class="skills-open bg-dark-card border border-dark-border rounded-2xl p-6"
+            >
+              <div
+                class="skills__header flex items-center gap-3 mb-6 cursor-pointer select-none"
+              >
+                <i class="uil uil-database text-gold text-2xl"></i>
+                <div class="flex-1">
+                  <h3 class="font-display font-semibold text-base">
+                    Databases
+                  </h3>
+                  <p class="text-ivory/40 text-xs">Data Systems</p>
+                </div>
+                <i
+                  class="uil uil-angle-down skills-arrow text-gold text-xl"
+                ></i>
+              </div>
+              <div class="skills-list space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>MySQL</span><span class="text-gold">70%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-1">
+                    <span>MongoDB</span><span class="text-gold">70%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== QUALIFICATIONS ===== -->
+      <section id="qualifications" class="py-20 px-4 section-fade">
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-gold text-sm font-medium tracking-widest uppercase mb-2"
+          >
+            My journey
+          </p>
+          <h2 class="font-display font-bold text-4xl md:text-5xl mb-12">
+            Qualifications
+          </h2>
+
+          <!-- Tabs -->
+          <div class="flex gap-6 mb-10 border-b border-dark-border">
+            <button
+              data-target="education"
+              class="qual-btn qual-active pb-3 font-display font-semibold text-base flex items-center gap-2 transition-colors"
+            >
+              <i class="uil uil-graduation-cap text-xl"></i> Education
+            </button>
+            <button
+              data-target="work"
+              class="qual-btn pb-3 font-display font-semibold text-base text-ivory/50 flex items-center gap-2 transition-colors hover:text-gold"
+            >
+              <i class="uil uil-briefcase-alt text-xl"></i> Work
+            </button>
+          </div>
+
+          <!-- Education -->
+          <div id="education" class="qual-content qual-active">
+            <div class="relative pl-8">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-px bg-dark-border"
+              ></div>
+
+              <div class="relative mb-10">
+                <div
+                  class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-gold border-4 border-dark"
+                ></div>
+                <div
+                  class="bg-dark-card border border-dark-border rounded-2xl p-6"
+                >
+                  <h3 class="font-display font-semibold text-lg mb-1">
+                    Bachelors in Computer Applications
+                  </h3>
+                  <a
+                    href="https://gurunanakcollege.edu.in/"
+                    target="_blank"
+                    class="text-gold text-sm hover:underline"
+                    >Guru Nanak College</a
+                  >
+                  <p class="text-ivory/50 text-xs mt-1">CGPA: 7.5</p>
+                  <p class="text-ivory/40 text-xs mt-2 flex items-center gap-1">
+                    <i class="uil uil-calendar-alt"></i> 2022 – 2025
+                  </p>
+                </div>
+              </div>
+
+              <div class="relative mb-10">
+                <div
+                  class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-gold border-4 border-dark"
+                ></div>
+                <div
+                  class="bg-dark-card border border-dark-border rounded-2xl p-6"
+                >
+                  <h3 class="font-display font-semibold text-lg mb-1">
+                    MSc Applied Data Science
+                  </h3>
+                  <a
+                    href="https://www.srmist.edu.in/"
+                    target="_blank"
+                    class="text-gold text-sm hover:underline"
+                    >SRM IST</a
+                  >
+                  <p class="text-ivory/50 text-xs mt-1">72%</p>
+                  <p class="text-ivory/40 text-xs mt-2 flex items-center gap-1">
+                    <i class="uil uil-calendar-alt"></i> 2025 – 2027
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work -->
+          <div id="work" class="qual-content">
+            <div class="relative pl-8">
+              <div
+                class="absolute left-0 top-0 bottom-0 w-px bg-dark-border"
+              ></div>
+
+              <div class="relative mb-10">
+                <div
+                  class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-gold border-4 border-dark"
+                ></div>
+                <div
+                  class="bg-dark-card border border-dark-border rounded-2xl p-6"
+                >
+                  <h3 class="font-display font-semibold text-lg mb-1">
+                    MERN Stack Intern
+                  </h3>
+                  <a
+                    href="https://www.altruisty.in"
+                    target="_blank"
+                    class="text-gold text-sm hover:underline"
+                    >Altruisty</a
+                  >
+                  <p class="text-ivory/40 text-xs mt-2 flex items-center gap-1">
+                    <i class="uil uil-calendar-alt"></i> Nov 2024 – Jan 2025
+                  </p>
+                </div>
+              </div>
+
+              <div class="relative mb-10">
+                <div
+                  class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-gold border-4 border-dark"
+                ></div>
+                <div
+                  class="bg-dark-card border border-dark-border rounded-2xl p-6"
+                >
+                  <h3 class="font-display font-semibold text-lg mb-1">
+                    Web Developer Intern
+                  </h3>
+                  <a
+                    href="https://www.prodigyinfotech.dev/"
+                    target="_blank"
+                    class="text-gold text-sm hover:underline"
+                    >Prodigy Infotech</a
+                  >
+                  <p class="text-ivory/40 text-xs mt-2 flex items-center gap-1">
+                    <i class="uil uil-calendar-alt"></i> Oct 2024 – Nov 2024
+                  </p>
+                </div>
+              </div>
+
+              <div class="relative mb-10">
+                <div
+                  class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-gold border-4 border-dark"
+                ></div>
+                <div
+                  class="bg-dark-card border border-dark-border rounded-2xl p-6 border-l-2 border-l-gold"
+                >
+                  <div class="flex items-center gap-2 mb-1">
+                    <h3 class="font-display font-semibold text-lg">
+                      Full-Stack Developer & Founder
+                    </h3>
+                    <span
+                      class="text-xs bg-gold/20 text-gold px-2 py-0.5 rounded-full"
+                      >Current</span
+                    >
+                  </div>
+                  <a
+                    href="https://www.cookie.org.in/"
+                    target="_blank"
+                    class="text-gold text-sm hover:underline"
+                    >Cookie</a
+                  >
+                  <p class="text-ivory/40 text-xs mt-2 flex items-center gap-1">
+                    <i class="uil uil-calendar-alt"></i> Jan 2025 – Present
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== EXPERTISE ===== -->
+      <section id="expertise" class="py-20 px-4 section-fade">
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-gold text-sm font-medium tracking-widest uppercase mb-2"
+          >
+            What I do
+          </p>
+          <h2 class="font-display font-bold text-4xl md:text-5xl mb-14">
+            Expertise
+          </h2>
+
+          <div class="grid sm:grid-cols-3 gap-6">
+            <!-- Web Dev -->
+            <div
+              class="group bg-ivory rounded-2xl p-6 cursor-pointer hover:shadow-lg hover:shadow-gold/10 transition-all expertise-card"
+              data-modal="modal-web"
+            >
+              <div
+                class="w-12 h-12 bg-dark rounded-xl flex items-center justify-center mb-5"
+              >
+                <i class="uil uil-chart-line text-gold text-2xl"></i>
+              </div>
+              <h3 class="font-display font-bold text-dark text-xl mb-3">
+                Web Development
+              </h3>
+              <p class="text-dark/60 text-sm leading-relaxed mb-5">
+                Building dynamic, scalable web apps with modern stacks like MERN
+                and Django REST.
+              </p>
+              <span
+                class="text-dark font-semibold text-sm flex items-center gap-1 group-hover:gap-3 transition-all"
+              >
+                View More <i class="uil uil-arrow-right"></i>
+              </span>
+            </div>
+
+            <!-- Graphic -->
+            <div
+              class="group bg-ivory rounded-2xl p-6 cursor-pointer hover:shadow-lg hover:shadow-gold/10 transition-all expertise-card"
+              data-modal="modal-graphic"
+            >
+              <div
+                class="w-12 h-12 bg-dark rounded-xl flex items-center justify-center mb-5"
+              >
+                <i class="uil uil-brain text-gold text-2xl"></i>
+              </div>
+              <h3 class="font-display font-bold text-dark text-xl mb-3">
+                Graphic Designer
+              </h3>
+              <p class="text-dark/60 text-sm leading-relaxed mb-5">
+                Crafting visually appealing interfaces using Figma, Adobe XD,
+                and Canva.
+              </p>
+              <span
+                class="text-dark font-semibold text-sm flex items-center gap-1 group-hover:gap-3 transition-all"
+              >
+                View More <i class="uil uil-arrow-right"></i>
+              </span>
+            </div>
+
+            <!-- Django -->
+            <div
+              class="group bg-ivory rounded-2xl p-6 cursor-pointer hover:shadow-lg hover:shadow-gold/10 transition-all expertise-card"
+              data-modal="modal-django"
+            >
+              <div
+                class="w-12 h-12 bg-dark rounded-xl flex items-center justify-center mb-5"
+              >
+                <i class="uil uil-robot text-gold text-2xl"></i>
+              </div>
+              <h3 class="font-display font-bold text-dark text-xl mb-3">
+                Django Developer
+              </h3>
+              <p class="text-dark/60 text-sm leading-relaxed mb-5">
+                Building robust Python backends optimized for performance and
+                scalability.
+              </p>
+              <span
+                class="text-dark font-semibold text-sm flex items-center gap-1 group-hover:gap-3 transition-all"
+              >
+                View More <i class="uil uil-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expertise Modals -->
+      <div
+        id="modal-web"
+        class="expertise-modal fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+      >
+        <div class="bg-ivory rounded-2xl p-8 max-w-md w-full relative">
+          <button
+            class="modal-close absolute top-4 right-4 text-dark/40 hover:text-dark text-2xl"
+          >
+            <i class="uil uil-times"></i>
+          </button>
+          <h3 class="font-display font-bold text-dark text-2xl mb-5">
+            Web Development
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                ><strong>Tech Stack:</strong> Node.js, MongoDB, React.js</span
+              >
+            </li>
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Building dynamic and fast webpages with real-time
+                features.</span
+              >
+            </li>
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Highly skilled in JavaScript problem solving and component
+                architecture.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        id="modal-graphic"
+        class="expertise-modal fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+      >
+        <div class="bg-ivory rounded-2xl p-8 max-w-md w-full relative">
+          <button
+            class="modal-close absolute top-4 right-4 text-dark/40 hover:text-dark text-2xl"
+          >
+            <i class="uil uil-times"></i>
+          </button>
+          <h3 class="font-display font-bold text-dark text-2xl mb-5">
+            Graphic Designer
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Expert in creating visually appealing, user-friendly interfaces
+                using Figma, Adobe XD, and Canva.</span
+              >
+            </li>
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Combining creativity with functionality to craft engaging and
+                accessible user experiences.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        id="modal-django"
+        class="expertise-modal fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+      >
+        <div class="bg-ivory rounded-2xl p-8 max-w-md w-full relative">
+          <button
+            class="modal-close absolute top-4 right-4 text-dark/40 hover:text-dark text-2xl"
+          >
+            <i class="uil uil-times"></i>
+          </button>
+          <h3 class="font-display font-bold text-dark text-2xl mb-5">
+            Django Developer
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Developing efficient and robust Python applications optimized
+                for performance and scalability.</span
+              >
+            </li>
+            <li class="flex gap-3 text-dark/80 text-sm">
+              <i class="uil uil-check-circle text-gold text-lg mt-0.5"></i
+              ><span
+                >Built a YouTube Video Downloader in Django with a seamless,
+                responsive UI enhancing user experience.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== PORTFOLIO ===== -->
+      <section id="portfolio" class="py-24 px-4 section-fade">
+        <div class="max-w-6xl mx-auto">
+          <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4"
+          >
+            <div>
+              <p
+                class="text-gold text-xs font-medium tracking-[0.2em] uppercase mb-3"
+              >
+                Recent work
+              </p>
+              <h2
+                class="font-display font-extrabold text-5xl md:text-6xl leading-none"
+              >
+                Portfolio
+              </h2>
+            </div>
+            <p class="text-ivory/40 text-sm max-w-xs leading-relaxed">
+              A selection of projects built for clients and personal
+              exploration.
+            </p>
+          </div>
+
+          <!-- Filter tabs -->
+          <div class="flex flex-wrap gap-2 mb-10" id="portfolio-filters">
+            <button
+              class="filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider border border-gold bg-gold text-dark transition-all"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider border border-dark-border text-ivory/50 hover:border-gold hover:text-gold transition-all"
+              data-filter="web"
+            >
+              Web
+            </button>
+            <button
+              class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider border border-dark-border text-ivory/50 hover:border-gold hover:text-gold transition-all"
+              data-filter="tool"
+            >
+              Tools
+            </button>
+            <button
+              class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider border border-dark-border text-ivory/50 hover:border-gold hover:text-gold transition-all"
+              data-filter="game"
+            >
+              Game
+            </button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            id="projects-grid"
+          >
+            <!-- IQ-Bridge -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5"
+              data-category="web"
+            >
+              <div class="relative h-48 overflow-hidden bg-[#181818]">
+                <img
+                  src="assets/img/IQ-Bridge.png"
+                  alt="IQ-Bridge"
+                  class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-60"
+                ></div>
+                <span
+                  class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                  >Edu-tech</span
+                >
+              </div>
+              <div class="p-5">
+                <h3
+                  class="font-display font-bold text-lg mb-1.5 group-hover:text-gold transition-colors"
+                >
+                  IQ-Bridge
+                </h3>
+                <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                  Landing page for an EdTech client from UAE offering online
+                  courses and professional training.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >React</span
+                    >
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >Tailwind</span
+                    >
+                  </div>
+                  <a
+                    href="https://iqbridge.org"
+                    target="_blank"
+                    class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-ivory/40 hover:border-gold hover:text-gold transition-all group/btn"
+                  >
+                    <i class="uil uil-arrow-up-right text-base"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Designer Portfolio — featured (spans 2 cols on lg) -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5 lg:col-span-2"
+              data-category="web"
+            >
+              <div class="flex flex-col md:flex-row h-full">
+                <div
+                  class="relative md:w-1/2 h-48 md:h-auto overflow-hidden bg-[#181818] shrink-0"
+                >
+                  <img
+                    src="assets/img/arul.png"
+                    alt="Designer Portfolio"
+                    class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent md:bg-gradient-to-r opacity-60"
+                  ></div>
+                  <span
+                    class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                    >Portfolio</span
+                  >
+                </div>
+                <div class="p-5 md:p-7 flex flex-col justify-between">
+                  <div>
+                    <span
+                      class="text-[10px] font-bold tracking-[0.18em] uppercase text-gold/70 mb-2 block"
+                      >Featured</span
+                    >
+                    <h3
+                      class="font-display font-bold text-xl mb-2 group-hover:text-gold transition-colors"
+                    >
+                      Designer Portfolio
+                    </h3>
+                    <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                      A sleek portfolio site built for a UI/UX designer client —
+                      showcasing projects, process, and personality.
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1.5">
+                      <span
+                        class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                        >HTML</span
+                      >
+                      <span
+                        class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                        >CSS</span
+                      >
+                      <span
+                        class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                        >JS</span
+                      >
+                    </div>
+                    <a
+                      href="https://arulraj.cookie.org.in"
+                      target="_blank"
+                      class="inline-flex items-center gap-2 text-gold text-xs font-semibold hover:gap-3 transition-all"
+                    >
+                      View Project <i class="uil uil-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Commerce -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5"
+              data-category="web"
+            >
+              <div class="relative h-48 overflow-hidden bg-[#181818]">
+                <img
+                  src="assets/img/TT.png"
+                  alt="Mini Commerce"
+                  class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-60"
+                ></div>
+                <span
+                  class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                  >E-commerce</span
+                >
+              </div>
+              <div class="p-5">
+                <h3
+                  class="font-display font-bold text-lg mb-1.5 group-hover:text-gold transition-colors"
+                >
+                  Mini Commerce
+                </h3>
+                <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                  React-powered shop enabling users to browse and purchase
+                  products online with a smooth UX.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >React</span
+                    >
+                  </div>
+                  <a
+                    href="https://www.torquetoyzz.com/"
+                    target="_blank"
+                    class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-ivory/40 hover:border-gold hover:text-gold transition-all"
+                  >
+                    <i class="uil uil-arrow-up-right text-base"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Editor -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5"
+              data-category="tool"
+            >
+              <div class="relative h-48 overflow-hidden bg-[#181818]">
+                <img
+                  src="assets/img/Code Editor.jpg"
+                  alt="Code Editor"
+                  class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-60"
+                ></div>
+                <span
+                  class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                  >Dev Tool</span
+                >
+              </div>
+              <div class="p-5">
+                <h3
+                  class="font-display font-bold text-lg mb-1.5 group-hover:text-gold transition-colors"
+                >
+                  Code Editor
+                </h3>
+                <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                  Live in-browser editor for HTML, CSS & JS with real-time
+                  split-pane preview output.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >HTML</span
+                    >
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >Vanilla JS</span
+                    >
+                  </div>
+                  <a
+                    href="https://rkgit-1530.github.io/frontend-Editor-live/"
+                    target="_blank"
+                    class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-ivory/40 hover:border-gold hover:text-gold transition-all"
+                  >
+                    <i class="uil uil-arrow-up-right text-base"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lodge — spans full width at lg -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5"
+              data-category="web"
+            >
+              <div class="relative h-48 overflow-hidden bg-[#181818]">
+                <img
+                  src="assets/img/lodge.png"
+                  alt="Business Website"
+                  class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-60"
+                ></div>
+                <span
+                  class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                  >Business</span
+                >
+              </div>
+              <div class="p-5">
+                <h3
+                  class="font-display font-bold text-lg mb-1.5 group-hover:text-gold transition-colors"
+                >
+                  Business Website
+                </h3>
+                <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                  Complete business website for a lodge — property details,
+                  rooms, and booking information.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >HTML</span
+                    >
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >CSS</span
+                    >
+                  </div>
+                  <a
+                    href="https://www.sribrahmavidhyalodge.site/"
+                    target="_blank"
+                    class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-ivory/40 hover:border-gold hover:text-gold transition-all"
+                  >
+                    <i class="uil uil-arrow-up-right text-base"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tic Tac Toe -->
+            <div
+              class="project-card group relative bg-dark-card border border-dark-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gold/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5"
+              data-category="game"
+            >
+              <div class="relative h-48 overflow-hidden bg-[#181818]">
+                <img
+                  src="assets/img/Tictactoe.png"
+                  alt="Tic Tac Toe"
+                  class="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-60"
+                ></div>
+                <span
+                  class="absolute top-4 left-4 text-[10px] font-bold tracking-[0.18em] uppercase bg-gold/15 text-gold border border-gold/30 px-3 py-1 rounded-full backdrop-blur-sm"
+                  >Game</span
+                >
+              </div>
+              <div class="p-5">
+                <h3
+                  class="font-display font-bold text-lg mb-1.5 group-hover:text-gold transition-colors"
+                >
+                  Tic Tac Toe
+                </h3>
+                <p class="text-ivory/50 text-xs leading-relaxed mb-5">
+                  Polished Tic Tac Toe game with a beautiful UI and smooth,
+                  satisfying user experience.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >HTML</span
+                    >
+                    <span
+                      class="text-[10px] bg-dark border border-dark-border text-ivory/40 px-2 py-0.5 rounded"
+                      >Vanilla JS</span
+                    >
+                  </div>
+                  <a
+                    href="https://rkgit-1530.github.io/TIC-TAC-TOE/"
+                    target="_blank"
+                    class="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-ivory/40 hover:border-gold hover:text-gold transition-all"
+                  >
+                    <i class="uil uil-arrow-up-right text-base"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="py-20 px-4 section-fade">
+        <div class="max-w-5xl mx-auto">
+          <p
+            class="text-gold text-sm font-medium tracking-widest uppercase mb-2"
+          >
+            Get in touch
+          </p>
+          <h2 class="font-display font-bold text-4xl md:text-5xl mb-14">
+            Contact Me
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Info -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-dark-card border border-dark-border rounded-xl flex items-center justify-center text-gold text-2xl shrink-0"
+                >
+                  <i class="uil uil-whatsapp-alt"></i>
+                </div>
+                <div>
+                  <p
+                    class="font-display font-semibold text-sm text-ivory/50 uppercase tracking-wider mb-0.5"
+                  >
+                    WhatsApp
+                  </p>
+                  <p class="font-medium">+91 9962313298</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-dark-card border border-dark-border rounded-xl flex items-center justify-center text-gold text-2xl shrink-0"
+                >
+                  <i class="uil uil-envelope"></i>
+                </div>
+                <div>
+                  <p
+                    class="font-display font-semibold text-sm text-ivory/50 uppercase tracking-wider mb-0.5"
+                  >
+                    Email
+                  </p>
+                  <p class="font-medium">rajkaranpremkumar@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-dark-card border border-dark-border rounded-xl flex items-center justify-center text-gold text-2xl shrink-0"
+                >
+                  <i class="uil uil-map-marker"></i>
+                </div>
+                <div>
+                  <p
+                    class="font-display font-semibold text-sm text-ivory/50 uppercase tracking-wider mb-0.5"
+                  >
+                    Location
+                  </p>
+                  <p class="font-medium">Chennai, Tamil Nadu</p>
+                </div>
+              </div>
+
+              <!-- Decorative quote -->
+              <div class="mt-8 border-l-2 border-gold pl-5">
+                <p class="text-ivory/50 italic text-sm leading-relaxed">
+                  "Let's build something great together. I'm always open to new
+                  projects and collaborations."
+                </p>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form
+              action="mailto:rajkaranprem@gmail.com"
+              method="POST"
+              id="submit_form"
+              class="space-y-4"
+            >
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-ivory/50 text-xs uppercase tracking-wider mb-2"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-ivory placeholder-ivory/30 focus:border-gold focus:outline-none transition-colors text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-ivory/50 text-xs uppercase tracking-wider mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-ivory placeholder-ivory/30 focus:border-gold focus:outline-none transition-colors text-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="project-contact"
+                  class="block text-ivory/50 text-xs uppercase tracking-wider mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="project-contact"
+                  name="project"
+                  required
+                  class="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-ivory placeholder-ivory/30 focus:border-gold focus:outline-none transition-colors text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  for="message-contact"
+                  class="block text-ivory/50 text-xs uppercase tracking-wider mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message-contact"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-ivory placeholder-ivory/30 focus:border-gold focus:outline-none transition-colors text-sm resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                id="check"
+                class="w-full bg-gold hover:bg-gold-dark text-dark font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2"
+              >
+                Send Message <i class="uil uil-message text-lg"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer" class="bg-ivory py-10 px-4">
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <h2 class="font-display font-bold text-dark text-2xl">Raj Karan</h2>
+          <p class="text-dark/60 text-sm">
+            Full Stack Developer & UI/UX Designer
+          </p>
+        </div>
+        <ul class="flex gap-6 text-dark/70 text-sm font-medium">
+          <li>
+            <a href="#expertise" class="hover:text-gold transition-colors"
+              >Expertise</a
+            >
+          </li>
+          <li>
+            <a href="#portfolio" class="hover:text-gold transition-colors"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-gold transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <p class="text-dark/40 text-xs">© Raj Karan. All rights reserved.</p>
+      </div>
     </footer>
 
-
-    <!--==================== SCROLL TOP ====================-->
-    <a href="" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scroll__icon"></i>
+    <!-- Scroll up -->
+    <a
+      href="#"
+      id="scroll-up"
+      class="fixed right-4 bottom-20 w-10 h-10 bg-gold rounded-lg flex items-center justify-center text-dark z-40 hover:bg-gold-dark transition-all"
+    >
+      <i class="uil uil-arrow-up text-xl"></i>
     </a>
 
-    <!--==================== SWIPER JS ====================-->
+    <!-- ===== SCRIPTS ===== -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!--==================== MAIN JS ====================-->
-    <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
-
-</body>
-
+    <script src="assets/js/main.js">
+     
+    </script>
+  </body>
 </html>
